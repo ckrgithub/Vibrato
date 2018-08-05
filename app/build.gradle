@@ -21,4 +21,6 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation applyConfig.appcompat_v7
     implementation applyConfig.constraint_layout
+    implementation applyConfig.exoplayer_core
+    implementation applyConfig.exoplayer_ui
 }
