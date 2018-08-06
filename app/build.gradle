@@ -22,6 +22,9 @@ dependencies {
     implementation project(':baseframework')
     implementation applyConfig.exoplayer_core
     implementation applyConfig.exoplayer_ui
+    implementation applyConfig.exoplayer_dash
+    implementation applyConfig.exoplayer_hls
+    implementation applyConfig.exoplayer_smoothstreaming
     implementation applyConfig.PageView
 
     //----------butterknife引用---------

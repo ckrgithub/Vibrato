@@ -6,6 +6,10 @@ import android.support.v4.app.Fragment;
 
 import com.ckr.baseframework.BaseFrameWorkFragment;
 import com.ckr.pageview.view.PageView;
+import com.ckr.vibrato.adapter.VideoPlayerAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 
@@ -29,7 +33,10 @@ public class MainFragment extends BaseFrameWorkFragment {
 
 	@Override
 	protected void init() {
-
+		pageView.setAdapter(new VideoPlayerAdapter(getContext()));
+		List data = new ArrayList();
+		data.add("1");
+		pageView.updateAll(data);
 	}
 
 	@Override

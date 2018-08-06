@@ -15,8 +15,11 @@ ext {
     exoplayerVersion = "2.8.2"
 
     applyConfig = [
-            exoplayer_core   : "com.google.android.exoplayer:exoplayer-core:${exoplayerVersion}",
-            exoplayer_ui     : "com.google.android.exoplayer:exoplayer-ui:${exoplayerVersion}",
-            PageView     : "ckrjfrog.Page:PageView:1.2.2",
+            exoplayer_core: "com.google.android.exoplayer:exoplayer-core:${exoplayerVersion}",
+            exoplayer_ui  : "com.google.android.exoplayer:exoplayer-ui:${exoplayerVersion}",
+            exoplayer_dash: "com.google.android.exoplayer:exoplayer-dash:${exoplayerVersion}",
+            exoplayer_hls: "com.google.android.exoplayer:exoplayer-hls:${exoplayerVersion}",
+            exoplayer_smoothstreaming: "com.google.android.exoplayer:exoplayer-smoothstreaming:${exoplayerVersion}",
+            PageView      : "ckrjfrog.Page:PageView:1.2.2",
     ]
 }
