@@ -12,14 +12,14 @@ ext {
             targetSdkVersion : 27,
     ]
 
-    supportVersion = "27.1.1"
     exoplayerVersion = "2.8.2"
 
     applyConfig = [
-            appcompat_v7     : "com.android.support:appcompat-v7:${supportVersion}",
-            support_v4       : "com.android.support:support-v4:${supportVersion}",
-            constraint_layout: "com.android.support.constraint:constraint-layout:1.0.2",
-            exoplayer_core   : "com.google.android.exoplayer:exoplayer-core:${exoplayerVersion}",
-            exoplayer_ui     : "com.google.android.exoplayer:exoplayer-ui:${exoplayerVersion}",
+            exoplayer_core: "com.google.android.exoplayer:exoplayer-core:${exoplayerVersion}",
+            exoplayer_ui  : "com.google.android.exoplayer:exoplayer-ui:${exoplayerVersion}",
+            exoplayer_dash: "com.google.android.exoplayer:exoplayer-dash:${exoplayerVersion}",
+            exoplayer_hls: "com.google.android.exoplayer:exoplayer-hls:${exoplayerVersion}",
+            exoplayer_smoothstreaming: "com.google.android.exoplayer:exoplayer-smoothstreaming:${exoplayerVersion}",
+            PageView      : "ckrjfrog.Page:PageView:1.2.2",
     ]
 }

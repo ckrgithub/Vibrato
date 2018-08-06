@@ -1,34 +1,35 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
+apply from: "framework.gradle"
 
 android {
     compileSdkVersion androidConfig.compileSdkVersion
+
     defaultConfig {
-        applicationId appConfig.applicationId
         minSdkVersion androidConfig.minSdkVersion
         targetSdkVersion androidConfig.targetSdkVersion
-        versionCode appConfig.versionCode
-        versionName appConfig.versionName
+        versionCode frameworkConfig.versionCode
+        versionName frameworkConfig.versionName
+
     }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation project(':baseframework')
-    implementation applyConfig.exoplayer_core
-    implementation applyConfig.exoplayer_ui
-    implementation applyConfig.exoplayer_dash
-    implementation applyConfig.exoplayer_hls
-    implementation applyConfig.exoplayer_smoothstreaming
-    implementation applyConfig.PageView
+    api frameworkApplyConfig.recyclerview_v7
+    api frameworkApplyConfig.appcompat_v7
+    api frameworkApplyConfig.support_v4
+    api frameworkApplyConfig.constraint_layout
 
     //----------butterknife引用---------
-    implementation 'com.jakewharton:butterknife:8.8.1'
+    compileOnly 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     //------------end---------
 }
