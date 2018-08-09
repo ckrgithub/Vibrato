@@ -20,7 +20,8 @@ import butterknife.ButterKnife;
  */
 
 public class VideoPlayerAdapter extends BasePageAdapter<String, VideoPlayerAdapter.VideoHolder> {
-
+	private static final String TAG = "VideoPlayerAdapter";
+	
 	private PlayerManager playerManager;
 
 	public VideoPlayerAdapter(Context context) {

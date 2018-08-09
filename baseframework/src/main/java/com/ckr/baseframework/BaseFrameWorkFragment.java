@@ -34,9 +34,9 @@ public abstract class BaseFrameWorkFragment extends Fragment {
 		unbinder.unbind();
 	}
 
+	protected abstract @LayoutRes int getLayoutId();
+
 	protected abstract void init();
 
-	protected abstract @LayoutRes
-	int getLayoutId();
 
 }

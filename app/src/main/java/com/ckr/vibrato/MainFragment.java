@@ -13,11 +13,14 @@ import java.util.List;
 
 import butterknife.BindView;
 
+import static com.ckr.baseframework.log.BaseLog.Logd;
+
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class MainFragment extends BaseFrameWorkFragment {
+	private static final String TAG = "MainFragment";
 
 	@BindView(R.id.pageView)
 	PageView pageView;
@@ -32,16 +35,18 @@ public class MainFragment extends BaseFrameWorkFragment {
 	}
 
 	@Override
+	protected int getLayoutId() {
+		return R.layout.fragment_main;
+	}
+
+	@Override
 	protected void init() {
+		Logd(TAG, "init: ");
 		pageView.setAdapter(new VideoPlayerAdapter(getContext()));
-		List data = new ArrayList();
+		List data = new ArrayList<String>();
 		data.add("1");
 		pageView.updateAll(data);
 	}
 
-	@Override
-	protected int getLayoutId() {
-		return R.layout.fragment_main;
-	}
 
 }

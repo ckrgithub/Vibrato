@@ -20,6 +20,6 @@ ext {
             exoplayer_dash: "com.google.android.exoplayer:exoplayer-dash:${exoplayerVersion}",
             exoplayer_hls: "com.google.android.exoplayer:exoplayer-hls:${exoplayerVersion}",
             exoplayer_smoothstreaming: "com.google.android.exoplayer:exoplayer-smoothstreaming:${exoplayerVersion}",
-            PageView      : "ckrjfrog.Page:PageView:1.2.2",
+            PageView      : "ckrjfrog.Page:PageView:1.2.3",
     ]
 }
