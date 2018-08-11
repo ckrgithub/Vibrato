@@ -14,6 +14,21 @@
  * limitations under the License.
  */
 package com.ckr.vibrato.player;
+/*
+ * Copyright (C) 2017 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
 import android.content.Context;
 import android.net.Uri;
@@ -25,7 +40,6 @@ import com.google.android.exoplayer2.ExoPlayer;
 import com.google.android.exoplayer2.ExoPlayerFactory;
 import com.google.android.exoplayer2.SimpleExoPlayer;
 import com.google.android.exoplayer2.source.ExtractorMediaSource;
-import com.google.android.exoplayer2.source.LoopingMediaSource;
 import com.google.android.exoplayer2.source.MediaSource;
 import com.google.android.exoplayer2.source.ads.AdsMediaSource;
 import com.google.android.exoplayer2.source.dash.DashMediaSource;
@@ -44,16 +58,8 @@ import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter;
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory;
 import com.google.android.exoplayer2.util.Util;
 
-//import com.google.android.exoplayer2.ext.ima.ImaAdsLoader;
-//import com.google.android.exoplayer2.source.dash.DashMediaSource;
-//import com.google.android.exoplayer2.source.dash.DefaultDashChunkSource;
-//import com.google.android.exoplayer2.source.hls.HlsMediaSource;
-//import com.google.android.exoplayer2.source.smoothstreaming.DefaultSsChunkSource;
-//import com.google.android.exoplayer2.source.smoothstreaming.SsMediaSource;
 
-/**
- * Manages the {@link ExoPlayer}, the IMA plugin and all video playback.
- */
+/** Manages the {@link ExoPlayer}, the IMA plugin and all video playback. */
 /* package */ public final class PlayerManager implements AdsMediaSource.MediaSourceFactory {
 
 	//  private final ImaAdsLoader adsLoader;
@@ -91,6 +97,7 @@ import com.google.android.exoplayer2.util.Util;
 
 		// This is the MediaSource representing the content media (i.e. not the ad).
 		String contentUrl = context.getString(R.string.content_url);
+//    <![CDATA[http://rmcdn.2mdn.net/MotifFiles/html/1248596/android_1330378998288.mp4]]>
 		MediaSource contentMediaSource = buildMediaSource(Uri.parse(contentUrl));
 
 		// Compose the content media source into a new AdsMediaSource with both ads and content.
@@ -98,14 +105,14 @@ import com.google.android.exoplayer2.util.Util;
 //        new AdsMediaSource(
 //            contentMediaSource,
 //            /* adMediaSourceFactory= */ this,
-//            null,
+//            adsLoader,
 //            playerView.getOverlayFrameLayout(),
 //            /* eventHandler= */ null,
 //            /* eventListener= */ null);
-		LoopingMediaSource mediaSource = new LoopingMediaSource(contentMediaSource);
+
 		// Prepare the player with the source.
 		player.seekTo(contentPosition);
-		player.prepare(mediaSource);
+		player.prepare(contentMediaSource);
 		player.setPlayWhenReady(true);
 	}
 
@@ -135,7 +142,7 @@ import com.google.android.exoplayer2.util.Util;
 	@Override
 	public int[] getSupportedTypes() {
 		// IMA does not support Smooth Streaming ads.
-		return new int[]{C.TYPE_DASH, C.TYPE_HLS, C.TYPE_OTHER};
+		return new int[] {C.TYPE_DASH, C.TYPE_HLS, C.TYPE_OTHER};
 	}
 
 	// Internal methods.
