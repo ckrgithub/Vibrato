@@ -1,14 +1,19 @@
 //全局参数
 ext {
     frameworkConfig = [
-            versionCode  : 1,
-            versionName  : "1.0",
+            versionCode: 1,
+            versionName: "1.0",
     ]
     supportVersion = "27.1.1"
     frameworkApplyConfig = [
-            appcompat_v7     : "com.android.support:appcompat-v7:${supportVersion}",
-            recyclerview_v7       : "com.android.support:recyclerview-v7:${supportVersion}",
-            support_v4       : "com.android.support:support-v4:${supportVersion}",
-            constraint_layout: "com.android.support.constraint:constraint-layout:1.0.2",
+            appcompat_v7       : "com.android.support:appcompat-v7:${supportVersion}",
+            recyclerview_v7    : "com.android.support:recyclerview-v7:${supportVersion}",
+            support_v4         : "com.android.support:support-v4:${supportVersion}",
+            constraint_layout  : "com.android.support.constraint:constraint-layout:1.0.2",
+
+            //数据解析            com.fasterxml.jackson.core:jackson-databind:2.9.0.pr3
+            jackson_databind   : "com.fasterxml.jackson.core:jackson-databind:2.9.6",
+            jackson_core       : "com.fasterxml.jackson.core:jackson-core:2.9.6",
+            jackson_annotations: "com.fasterxml.jackson.core:jackson-annotations:2.9.6",
     ]
 }
